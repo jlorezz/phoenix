@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt" = {
+    device = "/dev/pool/home";
+    fsType = "ext4";
+  };
+
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
