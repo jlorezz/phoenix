@@ -9,23 +9,25 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-raid" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
+  boot.zfs.package = pkgs.zfs;
+  boot.zfs.extraPools = [ "storage" ];
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.forceImportRoot = false;
+  
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/95191e56-e1a1-4bea-b66f-8a3b7f735fc7";
       fsType = "ext4";
     };
 
-  fileSystems."/mnt" = {
-    device = "/dev/pool/home";
-    fsType = "ext4";
-  };
-
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
+  networking.hostId = "e56acff8";
+  
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
