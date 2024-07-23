@@ -1,15 +1,15 @@
 services:
-  broker:
+  paperless-ngx-broker:
     image: docker.io/library/redis:7
     restart: unless-stopped
     volumes:
       - /storage/paperless-ngx-dataset/redisdata:/data
 
-  webserver:
+  paperless-ngx:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
     depends_on:
-      - broker
+      - paperless-ngx-broker
     ports:
       - "8000:8000"
     volumes:
@@ -19,7 +19,7 @@ services:
       - /storage/paperless-ngx-dataset/consume:/usr/src/paperless/consume
     env_file: .env
     environment:
-      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_REDIS: redis://paperless-ngx-broker:6379
       PAPERLESS_DATABASE: sqlite:////usr/src/paperless/data/db.sqlite3
 
 volumes:
