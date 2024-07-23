@@ -28,6 +28,7 @@ with lib; {
     '';
   };
   services = {
+    tailscale.enable = mkDefault true;
     vscode-server.enable = mkDefault true;
     openssh = mkDefault {
       enable = true;
@@ -52,7 +53,7 @@ with lib; {
         "wheel"
       ];
       shell = pkgs.fish;
-      hashedPassword = "$6$NjIbvQqK1EIbSjs4$x9BYXM8xsfxQKg/Ct.SM6MiYb0t1bvWxwWv33s/th8KQkrSKegb0J/aYFXDq1B7p7b2rsmgJKS559bZ3vx4TS1";	
+      hashedPassword = "$6$NjIbvQqK1EIbSjs4$x9BYXM8xsfxQKg/Ct.SM6MiYb0t1bvWxwWv33s/th8KQkrSKegb0J/aYFXDq1B7p7b2rsmgJKS559bZ3vx4TS1";
       openssh.authorizedKeys.keys = [sshPubKey];
     };
   };

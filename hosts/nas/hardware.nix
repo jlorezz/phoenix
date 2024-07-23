@@ -1,28 +1,47 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
-  boot.zfs.package = pkgs.zfs;
-  boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = false;    
-  boot.zfs.extraPools = [ "storage" ];  
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8061e2be-480b-4fff-a925-eb7843694ea7";
-      fsType = "ext4";
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
+      initrd.kernelModules = [];
     };
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
+    supportedFilesystems = ["zfs"];
+    zfs = {
+      package = pkgs.zfs;
+      forceImportRoot = false;
+      extraPools = ["storage"];
+    };
+  };
 
-  swapDevices = [ ];
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/8061e2be-480b-4fff-a925-eb7843694ea7";
+    fsType = "ext4";
+  };
 
-  networking.useDHCP = lib.mkDefault true;
-  networking.hostId = "e5d98336";
+  swapDevices = [];
+
+  networking = {
+    hostId = "e5d98336";
+    useDHCP = lib.mkDefault true;
+  };
+
+  systemd.targets = {
+    sleep.enable = false;
+    suspend.enable = false;
+    hibernate.enable = false;
+    hybrid-sleep.enable = false;
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
