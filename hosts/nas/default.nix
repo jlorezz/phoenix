@@ -49,8 +49,10 @@
       enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      layout = "us";
-      xkb.variant = "";
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
     printing.enable = true;
     pipewire = {
