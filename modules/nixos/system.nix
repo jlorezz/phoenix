@@ -11,9 +11,9 @@ with lib; {
 
   environment.variables.EDITOR = mkDefault "nano";
   environment.systemPackages = with pkgs; [alejandra nil];
-  environment.sessionVariables = {
-    PODMAN_IGNORE_CGROUPSV1_WARNING = 1;
-  };
+  # environment.sessionVariables = {
+  #   PODMAN_IGNORE_CGROUPSV1_WARNING = 1;
+  # };
 
   networking.hostName = mkDefault "nixos";
   system.stateVersion = mkDefault "24.05";

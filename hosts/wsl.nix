@@ -5,7 +5,7 @@
 }: {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
-    ../modules/nixos/podman
+    ../modules/nixos/docker
   ];
 
   home-manager.users.${username} = {
@@ -17,7 +17,7 @@
     enableElixir = true;
   };
 
-  virtualisation.podman.enable = true;
+  virtualisation.docker.enable = true;
 
   programs.fish.interactiveShellInit = ''
     set fish_greeting

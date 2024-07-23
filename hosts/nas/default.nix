@@ -1,11 +1,10 @@
 {
   config,
-  pkgs,
   lib,
   username,
   ...
 }: {
-  imports = [./hardware.nix];
+  imports = [./hardware.nix ../../modules/nixos/docker];
 
   boot.loader.grub = {
     enable = true;
@@ -26,6 +25,8 @@
   home-manager.users.${username} = {
     imports = [../../modules/home/git.nix];
   };
+
+  virtualisation.docker.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
@@ -76,8 +77,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV9XJ1F4/1lOgEZnmcaRLzSLYnRu1CbmUCj3P9GJbjd florianbress@gmail.com"
     ];
   };
-
-  programs.firefox.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
