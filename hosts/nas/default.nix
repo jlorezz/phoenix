@@ -66,7 +66,9 @@
 
   users.users.${username} = {
     extraGroups = lib.mkAfter ["networkmanager"];
-    openssh.authorizedKeys.keys = [ ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV9XJ1F4/1lOgEZnmcaRLzSLYnRu1CbmUCj3P9GJbjd florianbress@gmail.com"
+    ];
   };
   
   programs.firefox.enable = true;
