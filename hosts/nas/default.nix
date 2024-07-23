@@ -59,7 +59,15 @@
     #media-session.enable = true;
   };
 
-  users.users.${username}.extraGroups = lib.mkAfter ["networkmanager"];
+  services.openssh = {    
+    enable = true;
+    startWhenNeeded = true;
+  };
+
+  users.users.${username} = {
+    extraGroups = lib.mkAfter ["networkmanager"];
+    openssh.authorizedKeys.keys = [ ];
+  };
   
   programs.firefox.enable = true;
 
