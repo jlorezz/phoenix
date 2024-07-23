@@ -74,7 +74,10 @@
   users.users.${username} = {
     extraGroups = lib.mkAfter ["networkmanager"];
     openssh.authorizedKeys.keys = [
+      # Desktop
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV9XJ1F4/1lOgEZnmcaRLzSLYnRu1CbmUCj3P9GJbjd florianbress@gmail.com"
+      # Laptop
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYegP9WraHdlU5BPiogtTONghE8yfK3/wg6Q94meZPd florianbress@gmail.com"
     ];
   };
 
