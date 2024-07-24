@@ -1,26 +1,36 @@
 services:
   paperless-ngx-broker:
     image: docker.io/library/redis:7
+    container_name: paperless-ngx-broker
     restart: unless-stopped
     volumes:
-      - /storage/paperless-ngx-dataset/redisdata:/data
+      - /storage/docker-dataset/paperless-ngx/redisdata:/data
 
   paperless-ngx:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    container_name: paperless-ngx
     restart: unless-stopped
     depends_on:
       - paperless-ngx-broker
     ports:
       - "8000:8000"
     volumes:
-      - /storage/paperless-ngx-dataset/data:/usr/src/paperless/data
-      - /storage/paperless-ngx-dataset/media:/usr/src/paperless/media
-      - /storage/paperless-ngx-dataset/export:/usr/src/paperless/export
-      - /storage/paperless-ngx-dataset/consume:/usr/src/paperless/consume
+      - /storage/docker-dataset/paperless-ngx/data:/usr/src/paperless/data
+      - /storage/docker-dataset/paperless-ngx/media:/usr/src/paperless/media
+      - /storage/docker-dataset/paperless-ngx/export:/usr/src/paperless/export
+      - /storage/docker-dataset/paperless-ngx/consume:/usr/src/paperless/consume
     env_file: .env
     environment:
       PAPERLESS_REDIS: redis://paperless-ngx-broker:6379
       PAPERLESS_DATABASE: sqlite:////usr/src/paperless/data/db.sqlite3
 
-volumes:
-  redisdata:
+  home-assistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: home-assistant
+    restart: unless-stopped
+    ports:
+      - "8123:8123"
+    volumes:
+      - /storage/docker-dataset/home-assistant/config:/config
+    environment:
+      - TZ=Europe/Berlin

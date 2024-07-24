@@ -6,6 +6,7 @@
 }:
 with lib; {
   config = mkIf config.virtualisation.docker.enable {
+    environment.systemPackages = with pkgs; [docker-compose];
     environment.etc."containers/registries.conf".source = lib.mkForce ./registries.conf;
 
     virtualisation.docker = {
