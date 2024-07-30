@@ -26,7 +26,13 @@
     imports = [../../modules/home/git.nix];
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "zfs";
+    daemon.settings = {
+      data-root = "/storage/docker-dataset";
+    };
+  };
 
   time.timeZone = "Europe/Berlin";
 

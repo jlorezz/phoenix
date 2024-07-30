@@ -27,6 +27,8 @@
       systems = ["x86_64-linux"];
       perSystem = {pkgs, ...}: {
         devshells.default.packages = with pkgs; [nil alejandra];
+        # devshells.node.packages = with pkgs; [nodejs];
+        devshells.cpp.packages = with pkgs; [cmake vcpkg];
       };
     };
 }
