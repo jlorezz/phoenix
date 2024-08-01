@@ -27,8 +27,9 @@
       systems = ["x86_64-linux"];
       perSystem = {pkgs, ...}: {
         devshells.default.packages = with pkgs; [nil alejandra];
-        # devshells.node.packages = with pkgs; [nodejs];
-        devshells.cpp.packages = with pkgs; [cmake vcpkg];
+        devshells.node.packages = with pkgs; [nodejs nodePackages.pnpm];
+        devshells.bun.packages = with pkgs; [bun];
+        devshells.cpp.packages = with pkgs; [clang-tools cmake cppcheck vcpkg gtest];
       };
     };
 }
