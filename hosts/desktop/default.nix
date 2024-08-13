@@ -61,14 +61,14 @@
     kitty
     meson
     neofetch
-    nvim
+    neovim
     networkmanagerapplet
     pipewire
     ranger
     rofi-wayland
     sddm
     waybar
-    inputs.wezterm.packages.${pkgs.system}.default
+    wezterm
     wget
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
