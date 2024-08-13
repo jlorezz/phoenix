@@ -19,5 +19,6 @@
   in {
     wsl = systemConfig "x86_64-linux" [../../hosts/wsl.nix];
     nas = systemConfig "x86_64-linux" [../../hosts/nas];
+    desktop = systemConfig "x86_64-linux" [../hosts/desktop];
   };
 }
