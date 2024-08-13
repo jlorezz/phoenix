@@ -56,6 +56,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    kitty
     hyprpaper
     rofi-wayland
     waybar
