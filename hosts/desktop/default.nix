@@ -15,7 +15,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   programs = {
-    firefox.enable = true;
     git.enable = true;
     hyprland = {
       enable = true;
@@ -56,13 +55,34 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kitty
+    emacs
+    firefox-wayland
+    fzf
+    git
+    gnome.gnome-keyring
     hyprpaper
+    hyprpicker
+    kitty
+    meson
+    neofetch
+    networkmanagerapplet
+    pipewire
+    ranger
     rofi-wayland
+    sddm
     waybar
-    wezterm
-    gnome-icon-theme
+    wget
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    xdg-utils
+    xwayland
   ];
+  fonts.fontDir.enable = true;
+  fonts.fonts = with pkgs; [
+    nerdfonts
+    font-awesome
+  ];
+
 
   services.greetd = {
     enable = true;
