@@ -71,6 +71,7 @@
     rofi-wayland
     sddm
     waybar
+    wezterm
     wget
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk

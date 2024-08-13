@@ -18,7 +18,7 @@
     };
     sharedModules = [
       {
-        imports = [./shell.nix ./code.nix];
+        imports = [./shell.nix ./code.nix ./wezterm.nix];
 
         home = {
           inherit username;
