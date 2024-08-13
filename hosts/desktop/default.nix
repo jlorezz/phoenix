@@ -33,6 +33,10 @@
     nvidia.modesetting.enable = true;
   };
 
+  environment.variables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   environment.systemPackages = with pkgs; [
     hyprpaper
     rofi-wayland
@@ -62,9 +66,13 @@
     jack.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
