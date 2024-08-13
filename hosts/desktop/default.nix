@@ -29,8 +29,6 @@
 
     pulseaudio.enable = false;
 
-    # most wayland compositors need this
-    nvidia.modesetting.enable = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];
