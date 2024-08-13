@@ -9,7 +9,6 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     flake-parts.url = "github:hercules-ci/flake-parts";
     devshell.url = "github:numtide/devshell";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = {
