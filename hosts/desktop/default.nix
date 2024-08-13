@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, inputs, ... }:
 
 {
@@ -65,13 +61,14 @@
     kitty
     meson
     neofetch
+    nvim
     networkmanagerapplet
     pipewire
     ranger
     rofi-wayland
     sddm
     waybar
-    wezterm
+    inputs.wezterm.packages.${pkgs.system}.default
     wget
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
