@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -14,12 +14,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+
   programs = {
     firefox.enable = true;
     git.enable = true;
     hyprland = {
       enable = true;
-      xwayland.enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     };
   };
 
@@ -31,10 +36,6 @@
 
     # most wayland compositors need this
     nvidia.modesetting.enable = true;
-  };
-
-  environment.variables = {
-    NIXOS_OZONE_WL = "1";
   };
 
   environment.systemPackages = with pkgs; [
@@ -64,11 +65,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
   };
 
   # Enable the X11 windowing system.
