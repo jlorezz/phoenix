@@ -55,6 +55,9 @@
     firefox-wayland
     fzf
     git
+    gcc
+    cmake
+    python3
     gnome.gnome-keyring
     hyprpaper
     hyprpicker
@@ -62,6 +65,7 @@
     gnumake
     meson
     neofetch
+    nodejs
     neovim
     networkmanagerapplet
     pipewire
