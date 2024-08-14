@@ -7,6 +7,8 @@
   ...
 }: {
   imports = [inputs.home-manager.nixosModules.default];
+  
+  home.packages = [nvim.packages.x86_64-linux.default];
 
   home-manager = {
     useGlobalPkgs = true;
@@ -17,6 +19,9 @@
       inherit username;
       inherit sshPubKey;
     };
+
+    # home.packages = [ nvim.packages.x86_64-linux.default  ];
+
     sharedModules = [
       {
         imports = [./shell.nix ./code.nix ./wezterm.nix];
@@ -31,9 +36,6 @@
         programs.home-manager.enable = true;
         services.ssh-agent.enable = true;
       }
-    ];
-    packages = [
-      nvim.packages.x86_64-linux.default
     ];
   };
 }
