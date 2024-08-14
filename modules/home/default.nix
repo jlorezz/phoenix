@@ -19,7 +19,7 @@
     };
     sharedModules = [
       {
-        imports = [./shell.nix ./code.nix ./wezterm.nix nvim.packages.x86_64-linux.default];
+        imports = [./shell.nix ./code.nix ./wezterm.nix];
 
         home = {
           inherit username;

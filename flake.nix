@@ -23,9 +23,10 @@
     sshPubKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV9XJ1F4/1lOgEZnmcaRLzSLYnRu1CbmUCj3P9GJbjd florianbress@gmail.com";
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
+      _module.args = {inherit username sshPubKey;};
       imports = [
         inputs.devshell.flakeModule
-        (import ./modules/flake/nixosConfigurations.nix {inherit inputs username sshPubKey;})
+        ./modules/flake/nixosConfigurations.nix
       ];
       systems = ["x86_64-linux"];
       perSystem = {pkgs, ...}: {
