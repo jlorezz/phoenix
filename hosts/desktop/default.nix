@@ -59,7 +59,7 @@
     hyprpaper
     hyprpicker
     kitty
-    make
+    gnumake
     meson
     neofetch
     neovim
