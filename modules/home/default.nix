@@ -1,14 +1,13 @@
 {
   pkgs,
   inputs,
-  nvim,
   username,
   sshPubKey,
   ...
 }: {
   imports = [inputs.home-manager.nixosModules.default];
   
-  home.packages = [nvim.packages.x86_64-linux.default];
+  home.packages = [inputs.nvim.packages.x86_64-linux.default];
 
   home-manager = {
     useGlobalPkgs = true;
