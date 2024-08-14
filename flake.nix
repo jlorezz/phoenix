@@ -11,7 +11,7 @@
     devshell.url = "github:numtide/devshell";
 
     nvim.url = "github:jlorezz/jlorezz-vim";
-    nvim.inputs.parts.follows = "parts";
+    nvim.inputs.parts.follows = "flake-parts";
   };
 
   outputs = {
