@@ -32,5 +32,8 @@
         services.ssh-agent.enable = true;
       }
     ];
+    packages = [
+      nvim.packages.x86_64-linux.default
+    ];
   };
 }
