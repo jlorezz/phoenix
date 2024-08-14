@@ -1,4 +1,4 @@
-{
+i{
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
@@ -9,6 +9,9 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     flake-parts.url = "github:hercules-ci/flake-parts";
     devshell.url = "github:numtide/devshell";
+
+    nvim.url = "github:jlorezz/jlorezz-vim";
+    nvim.inputs.parts.follows = "parts";
   };
 
   outputs = {

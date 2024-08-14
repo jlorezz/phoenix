@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  nvim,
   username,
   sshPubKey,
   ...
@@ -18,7 +19,7 @@
     };
     sharedModules = [
       {
-        imports = [./shell.nix ./code.nix ./nvim.nix ./wezterm.nix];
+        imports = [./shell.nix ./code.nix ./wezterm.nix nvim.packages.x86_64-linux.default];
 
         home = {
           inherit username;
