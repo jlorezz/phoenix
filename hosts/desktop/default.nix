@@ -66,7 +66,6 @@
     meson
     neofetch
     nodejs
-    neovim
     networkmanagerapplet
     pipewire
     ranger
