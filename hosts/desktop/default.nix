@@ -59,6 +59,32 @@
     hyprpaper
     hyprpicker
     kitty
+    make
+    meson
+    neofetch
+    neovim
+    networkmanagerapplet
+    pipewire
+    ranger
+    rofi-wayland
+    sddm
+    waybar
+    wezterm
+    wget
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    xdg-utils
+    xwayland
+  ];
+  environment.systemPackages = with pkgs; [
+    emacs
+    firefox-wayland
+    fzf
+    git
+    gnome.gnome-keyring
+    hyprpaper
+    hyprpicker
+    kitty
     meson
     neofetch
     neovim
