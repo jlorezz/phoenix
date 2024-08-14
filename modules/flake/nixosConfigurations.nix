@@ -5,10 +5,9 @@
   ...
 }: {
   flake.nixosConfigurations = let
-    systemConfig = system: modules:
+    systemConfig = modules:
       inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username sshPubKey;};
-        inherit system;
+        specialArgs = { inherit inputs username sshPubKey; };
         modules =
           [
             ../nixos/system.nix
@@ -17,8 +16,8 @@
           ++ modules;
       };
   in {
-    wsl = systemConfig "x86_64-linux" [../../hosts/wsl.nix];
-    nas = systemConfig "x86_64-linux" [../../hosts/nas];
-    desktop = systemConfig "x86_64-linux" [../../hosts/desktop];
+    wsl = systemConfig [ ../../hosts/wsl.nix ];
+    nas = systemConfig [ ../../hosts/nas ];
+    desktop = systemConfig [ ../../hosts/desktop ];
   };
 }
