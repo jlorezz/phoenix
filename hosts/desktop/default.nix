@@ -10,12 +10,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  programs = {
-    git.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+  home-manager.users.${username} = {
+    imports = [
+      ../../modules/home/git.nix
+      ../../modules/home/system/hyprland
+      ../../modules/home/system/waybar
+      ../../modules/home/programs/wezterm
+    ];
   };
 
   hardware = {
