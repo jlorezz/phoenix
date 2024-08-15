@@ -24,7 +24,7 @@
 
       mouse_bindings = [
         {
-          event = { Up = { streak = 1, button = "Left" } };
+          event = { Up = { streak = 1; button = "Left" } };
           mods = "CTRL";
           action = "OpenLinkAtMouseCursor";
         }
