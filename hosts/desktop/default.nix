@@ -52,7 +52,6 @@
 
   environment.systemPackages = with pkgs; [
     discord
-    tailscale
     emacs
     firefox-wayland
     fzf
@@ -63,11 +62,9 @@
     python3
     gnome.gnome-keyring
     hyprpaper
-    hyprpicker
     vscode
     kitty
     gnumake
-    meson
     neofetch
     nodejs
     networkmanagerapplet
@@ -78,10 +75,7 @@
     waybar
     wezterm
     wget
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
     xdg-utils
-    xwayland
   ];
 
   fonts.fontDir.enable = true;
