@@ -9,28 +9,14 @@
     # package = inputs.waybar.packages."${pkgs.system}".waybar;
     settings = {
       mainBar = {
-        layer = config.var.theme.waybar.position;
-        position = config.var.theme.waybar.position;
+        layer = "top";
+        position = "top";
         spacing = 0;
-        "margin-top" = if config.var.theme.waybar.float
-        && config.var.theme.waybar.position == "top" then
-          config.var.theme.gaps-out
-        else
-          0;
-        "margin-bottom" = if config.var.theme.waybar.float
-        && config.var.theme.waybar.position == "bottom" then
-          config.var.theme.gaps-out
-        else
-          0;
-        "margin-left" = if config.var.theme.waybar.float then
-          config.var.theme.gaps-out
-        else
-          0;
-        "margin-right" = if config.var.theme.waybar.float then
-          config.var.theme.gaps-out
-        else
-          0;
-        height = 44;
+        "margin-top" = 0;  
+        "margin-left" = 0;
+        "margin-right" = 0;
+        "margin-bottom" = 0;
+        height = 16;
         modules-left = [ "custom/logo" "hyprland/window" ];
         modules-center = [ "hyprland/workspaces" ];
         modules-right = [
@@ -160,37 +146,22 @@
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: "${config.var.theme.font}";
-        color: #${config.var.theme.colors.fg};
+        font-family: "SFProDisplay Nerd Font";
+        color: #cdd6f4;
         font-weight: 700;
       }
 
       window#waybar {
-        background-color: ${
-          if config.var.theme.waybar.transparent then
-            "rgba(0, 0, 0, 0)"
-          else
-            "#${config.var.theme.colors.bg}"
-        };
+        background-color: rgba(0, 0, 0, 0);
         transition-property: background-color;
         transition-duration: 0.5s;
-        border-radius: ${
-          if config.var.theme.waybar.float then
-            toString config.var.theme.rounding
-          else
-            "0"
-        }px;
-        font-size: ${toString config.var.theme.waybar.font-size}px;
+        border-radius: 11px;
+        font-size: 15px;
       }
 
       .modules-left, .modules-center, .modules-right {
-        border-radius: ${
-          if config.var.theme.waybar.float then
-            toString config.var.theme.rounding
-          else
-            "0"
-        }px;
-        background-color: #${config.var.theme.colors.bg};
+        border-radius: 11px;
+        background-color: #01010b;
         padding: 2px 6px;
       }
 
@@ -209,13 +180,13 @@
         padding: 6px 18px;
         margin: 6px 3px;
         border-radius: 4px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
       }
 
       #workspaces button.active {
-        color: #${config.var.theme.colors.accentFg};
-        background-color: #${config.var.theme.colors.accent};
+        color: #1e1e2e;
+        background-color: #89b4fa;
       }
 
       #workspaces button:hover {
@@ -225,11 +196,11 @@
       }
 
       #workspaces button.urgent {
-        background-color: #${config.var.theme.colors.c1};
+        background-color: #f38ba8;
       }
 
       #window > * {
-        font-family: "${config.var.theme.font-mono}";
+        font-family: "FiraCode Nerd Font Mono";
       }
 
       #memory,
@@ -246,19 +217,19 @@
         border-radius: 9px;
         margin: 6px 3px;
         padding: 6px 12px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
       }
 
       #tray menu {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
       }
 
       #custom-logo {
         padding-right: 7px;
-        font-size: ${toString config.var.theme.waybar.font-size}px;
-        color: #${config.var.theme.colors.accent};
+        font-size: 15px;
+        color: #89b4fa;
       }
 
       @keyframes blink {
@@ -281,28 +252,28 @@
       }
 
       #battery.charging {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
         animation: none;
       }
 
       #custom-power {
-        background-color: #${config.var.theme.colors.accent};
-        color: #${config.var.theme.colors.accentFg};
+        background-color: #89b4fa;
+        color: #1e1e2e;
       }
 
 
       tooltip {
         border-radius: 8px;
         padding: 15px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
       }
 
       tooltip label {
         padding: 5px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: #181825;
+        color: #bac2de;
       }
     '';
   };
