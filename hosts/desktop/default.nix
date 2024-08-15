@@ -51,16 +51,20 @@
   };
 
   environment.systemPackages = with pkgs; [
+    discord
+    tailscale
     emacs
     firefox-wayland
     fzf
     git
     gcc
     cmake
+    cmatrix
     python3
     gnome.gnome-keyring
     hyprpaper
     hyprpicker
+    vscode
     kitty
     gnumake
     meson
@@ -106,6 +110,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+  };
+  
+  services = {
+    tailscale.enable = config.var.tailscale;
+    gnome.gnome-keyring.enable = true;
   };
 
   # Enable the X11 windowing system.

@@ -11,6 +11,7 @@
         modules =
           [
             ../nixos/system.nix
+            ../nixos/sops.nix
             ../home
           ]
           ++ modules;

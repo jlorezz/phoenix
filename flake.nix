@@ -10,8 +10,12 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     devshell.url = "github:numtide/devshell";
 
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    
     nvim.url = "github:jlorezz/jlorezz-vim";
     nvim.inputs.parts.follows = "flake-parts";
+
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
