@@ -25,7 +25,13 @@
           inherit username;
           homeDirectory = "/home/${username}";
           stateVersion = "24.05";
-          packages = with pkgs; [curl wget zip unzip inputs.nvim.packages.x86_64-linux.default];
+          packages = [
+            pkgs.curl 
+            pkgs.wget 
+            pkgs.zip 
+            pkgs.unzip 
+            inputs.nvim.packages.x86_64-linux.default
+          ];
         };
 
         programs.home-manager.enable = true;
