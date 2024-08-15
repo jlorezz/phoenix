@@ -113,7 +113,6 @@
   };
   
   services = {
-    tailscale.enable = config.var.tailscale;
     gnome.gnome-keyring.enable = true;
   };
 
