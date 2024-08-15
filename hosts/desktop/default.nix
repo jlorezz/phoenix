@@ -16,6 +16,9 @@
       ../../modules/home/system/hyprland
       ../../modules/home/system/waybar
       ../../modules/home/programs/wezterm
+
+      # scripts
+      ../../modules/home/scripts
     ];
   };
 

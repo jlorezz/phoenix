@@ -43,6 +43,10 @@
       ### ESSENTIAL ENVIRONMENT ###
       #############################
 
+      exec-once = [
+        "startup"
+      ];
+
       # Environment variables
       env = [
         "XCURSOR_SIZE,24"
