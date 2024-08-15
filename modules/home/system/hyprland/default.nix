@@ -68,17 +68,7 @@
         "DP-2,2560x1440@164.84,2560x0,1"
         "HDMI-A-2,2560x1440@143.86,5120x0,1"
       ];
-
       
-      ###################
-      ### MY PROGRAMS ###
-      ###################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-
-      # Set programs that you use
-      terminal = "${pkgs.wezterm}/bin/wezterm";
-
       ###################
       ### LOOK AND FEEL ###
       ###################
@@ -167,7 +157,7 @@
 
       bind = [
         # Launch applications
-        "$mainMod, Q, exec, $terminal" # Launch terminal
+        "$mainMod, Q, exec, ${pkgs.wezterm}/bin/wezterm" # Launch terminal
         "$mainMod, E, exec, $fileManager" # Launch file manager
         "$mainMod, R, exec, $menu" # Launch menu
         "$mainMod, C, killactive," # Close active window
