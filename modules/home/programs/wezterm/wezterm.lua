@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 return {
 	enable_wayland = true,
+        front_end = 'WebGpu'
 	color_scheme = 'Catppuccin Mocha',
 	enable_tab_bar = false,
 	font_size = 16.0,
