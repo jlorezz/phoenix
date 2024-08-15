@@ -85,11 +85,4 @@ with lib; {
 
     package = pkgs.nixVersions.latest;
   };
-
-  documentation = mkDefault {
-    enable = false;
-    nixos.enable = false;
-    man.enable = false;
-    dev.enable = false;
-  };
 }

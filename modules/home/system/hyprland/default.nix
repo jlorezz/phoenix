@@ -3,10 +3,10 @@
 {
   # Import additional configurations if needed
   imports = [ 
-  ./hyprlocktty.nix 
-  ./hypridle.nix 
-  ./hyprpaper.nix 
-  ./hyprcursor.nix 
+  #  ./hyprlocktty.nix 
+  #  ./hypridle.nix 
+  #  ./hyprpaper.nix 
+  #  ./hyprcursor.nix 
   ];
     
   
