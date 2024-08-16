@@ -5,7 +5,7 @@
     enable = true;
     
     enabledExtensions = [
-      "git_worktree" # Load the git_worktree extension
+      # "git_worktree" # Load the git_worktree extension
     ];
 
     settings = {

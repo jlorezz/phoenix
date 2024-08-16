@@ -2,6 +2,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins/cmp.nix
+    ./plugins/harpoon.nix
     ./plugins/treesitter.nix
     ./plugins/tele.nix
     ./plugins/ui.nix
