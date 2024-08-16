@@ -19,7 +19,7 @@
 
     sharedModules = [
       {
-        imports = [./shell.nix ./code.nix];
+         # imports = [./shell.nix ./code.nix];
 
         home = {
           inherit username;
