@@ -50,8 +50,6 @@
       wrap = false;  # Prevent text wrapping
       termguicolors = true;  # Enable true color support
     };
-
-    leaderKey = " ";  # Set space as the leader key
   };
 }
 

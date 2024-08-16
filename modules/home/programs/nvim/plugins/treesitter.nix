@@ -36,7 +36,7 @@
       folding = true;
     };
 
-    treesitter-textobject = {
+    treesitter-textobjects = {
       select = {
         enable = true;
         lookahead = true;
