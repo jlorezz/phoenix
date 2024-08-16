@@ -20,13 +20,6 @@ with lib; {
   time.timeZone = mkDefault "Europe/Berlin";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting
-      bind -k nul -M insert 'accept-autosuggestion'
-    '';
-  };
   services = {
     tailscale.enable = mkDefault true;
     vscode-server.enable = mkDefault true;
