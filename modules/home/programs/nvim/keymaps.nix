@@ -76,10 +76,10 @@
           ss = ":noh<CR>";
 
           # Noice plugin dismissal
-          ["<leader>nn"] = ":Noice dismiss<CR>";
+          "<leader>nn" = ":Noice dismiss<CR>";
 
           # GoIfErr plugin
-          ["<leader>ee"] = "<cmd>GoIfErr<cr>";
+          "<leader>ee" = "<cmd>GoIfErr<cr>";
         };
 
       visual =
