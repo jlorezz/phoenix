@@ -1,10 +1,13 @@
 { inputs, ... }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./plugins/cmp.nix
+    ./plugins/treesitter.nix
+    ./plugins/ui.nix
+
+    ./colorscheme.nix
     ./keymaps.nix
     ./options.nix
-    ./plugins
-    ./colorscheme.nix
   ];
 
   home.shellAliases.v = "nvim";
