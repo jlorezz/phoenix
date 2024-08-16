@@ -97,19 +97,6 @@
       ["....."] = "cd ../../../..";
       ["......"] = "cd ../../../../..";
 
-      # K8S aliases
-      k = "kubectl";
-      ka = "kubectl apply -f";
-      kg = "kubectl get";
-      kd = "kubectl describe";
-      kdel = "kubectl delete";
-      kl = "kubectl logs -f";
-      kgpo = "kubectl get pod";
-      kgd = "kubectl get deployments";
-      kc = "kubectx";
-      kns = "kubens";
-      kcns = "kubectl config set-context --current --namespace";
-
       # HTTP requests alias
       http = "xh";
 
@@ -123,7 +110,9 @@
       gr = "~/go/src/github.com/tomnomnom/gf/gf";
 
       # Vim alias
-      v = "/opt/homebrew/bin/nvim";
+      vim = "nvim";
+      vi = "nvim";
+      v = "nvim";
 
       # File navigation functions
       rr = "ranger";
