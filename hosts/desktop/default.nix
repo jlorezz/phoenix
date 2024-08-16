@@ -69,6 +69,7 @@
     vscode
     kitty
     gnumake
+    lutris
     neofetch
     nodejs
     networkmanagerapplet
