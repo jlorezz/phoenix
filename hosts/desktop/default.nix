@@ -25,7 +25,7 @@
 
   hardware = {
     #opengl
-    graphics.enable = true;
+    opengl.enable = true;
 
     pulseaudio.enable = false;
   };
@@ -64,7 +64,7 @@
     cmake
     cmatrix
     python3
-    gnome-keyring
+    gnome.gnome-keyring
     hyprpaper
     vscode
     kitty

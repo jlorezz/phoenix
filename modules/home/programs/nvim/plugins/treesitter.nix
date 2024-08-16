@@ -5,35 +5,15 @@
 
       nixvimInjections = true;
 
-      settings = {
-        ensure_installed = [ 
-          "rust" 
-          "typescript" 
-          "regex" 
-          "bash" 
-          "markdown" 
-          "markdown_inline" 
-          "sql" 
-          "org"
-          "html"
-          "css"
-          "javascript" 
-          "json" 
-          "toml"
-        ]; 
-        highlight.enable = true;
-        indent.enable = true;
-        incremental_selection = {
-          enable = true;
-          keymaps = {
-            init_selection = "<c-space>";
-            node_incremental = "<c-space>";
-            scope_incremental = "<c-s>";
-            node_decremental = "<c-backspace>";
-          };
+      incrementalSelection = {
+        enable = true;
+        keymaps = {
+          initSelection = "<c-space>";
+          nodeIncremental = "<c-space>";
+          scopeIncremental = "<c-s>";
+          nodeDecremental = "<c-backspace>";
         };
       };
-
       folding = true;
     };
 
