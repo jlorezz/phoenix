@@ -13,10 +13,15 @@
   home-manager.users.${username} = {
     imports = [
       ../../modules/home/git.nix
+
+      # system
       ../../modules/home/system/hyprland
       ../../modules/home/system/waybar
+
+      # programs
       ../../modules/home/programs/wezterm
       ../../modules/home/programs/nvim
+      ../../modules/home/programs/shell
 
       # scripts
       ../../modules/home/scripts

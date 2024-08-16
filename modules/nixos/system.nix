@@ -20,6 +20,10 @@ with lib; {
   time.timeZone = mkDefault "Europe/Berlin";
   i18n.defaultLocale = mkDefault "en_GB.UTF-8";
 
+  programs.zsh = {
+    enable = true;
+  };
+
   services = {
     tailscale.enable = mkDefault true;
     vscode-server.enable = mkDefault true;
@@ -45,6 +49,7 @@ with lib; {
       extraGroups = [
         "wheel"
       ];
+      shell = pkgs.zsh;
       hashedPassword = "$6$NjIbvQqK1EIbSjs4$x9BYXM8xsfxQKg/Ct.SM6MiYb0t1bvWxwWv33s/th8KQkrSKegb0J/aYFXDq1B7p7b2rsmgJKS559bZ3vx4TS1";
       openssh.authorizedKeys.keys = [sshPubKey];
     };

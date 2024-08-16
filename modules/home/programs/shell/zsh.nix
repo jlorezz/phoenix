@@ -18,8 +18,6 @@
     ranger 
     zoxide 
     gobuster 
-    dirsearch 
-    massdns 
     python3 
     gobuster 
     ngrok 
@@ -91,11 +89,11 @@
       dx = "docker exec -it";
 
       # Directory navigation aliases
-      [".."] = "cd ..";
-      ["..."] = "cd ../..";
-      ["...."] = "cd ../../..";
-      ["....."] = "cd ../../../..";
-      ["......"] = "cd ../../../../..";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      "....." = "cd ../../../..";
+      "......" = "cd ../../../../..";
 
       # HTTP requests alias
       http = "xh";
@@ -107,7 +105,6 @@
       server = "python -m http.server 4445";
       tunnel = "ngrok http 4445";
       fuzz = "ffuf -w ~/hacking/SecLists/content_discovery_all.txt -mc all -u";
-      gr = "~/go/src/github.com/tomnomnom/gf/gf";
 
       # Vim alias
       vim = "nvim";
@@ -120,9 +117,6 @@
       fcd = "cd \"$(find . -type d -not -path '*/.*' | fzf)\" && l";
       f = "echo \"$(find . -type f -not -path '*/.*' | fzf)\" | pbcopy";
       fv = "nvim \"$(find . -type f -not -path '*/.*' | fzf)\"";
-
-      # Zoxide
-      eval "$(zoxide init zsh)";
     };
   };
 }

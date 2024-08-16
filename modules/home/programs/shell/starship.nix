@@ -4,18 +4,23 @@
     settings = {
       add_newline = true;
 
-      format = """$directory$character""";
+      format = lib.concatStrings [
+        "$directory"
+        "$character"
+      ];
 
       palette = "catppuccin_mocha";
 
-      right_format = """$all""";
+      right_format = lib.concatStrings [ 
+        "$all"
+      ];
 
       git_branch = {
         format =  "[$symbol$branch(:$remote_branch)]($style)";
       };
 
       palettes.catppuccin_mocha = {
-        "rosewater = "#f5e0dc";
+        "rosewater" = "#f5e0dc";
         "flamingo" = "#f2cdcd";
         "pink" = "#f5c2e7";
         "mauve" = "#cba6f7";

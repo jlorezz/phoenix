@@ -4,7 +4,7 @@
     settings = {
       gui.theme = {
         ligthTheme = false;
-        activeBorderColor = [ "red" "bold" ];
+        activeBorderColor = [ "blue" "bold" ];
         inactiveBorderColor = [ "black" ];
         selectedLineBgColor = [ "default" ];
       };
