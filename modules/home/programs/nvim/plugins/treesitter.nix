@@ -14,7 +14,6 @@
           nodeDecremental = "<c-backspace>";
         };
       };
-      folding = true;
     };
 
     treesitter-textobjects = {
