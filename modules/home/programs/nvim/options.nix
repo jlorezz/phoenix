@@ -32,9 +32,7 @@
 
       updatetime = 250;  # Decrease update time
       signcolumn = "yes";  # Show sign column
-
-      colorscheme = "catppuccin";  # Set colorscheme
-
+      
       completeopt = "menuone,noselect";  # Set completeopt to have a better completion experience
 
       conceallevel = 2;  # Concealer for Neorg
