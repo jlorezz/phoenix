@@ -4,25 +4,6 @@
     bat 
     ripgrep 
     tldr 
-    starship
-    kubectl 
-    awscli2 
-    zsh-autosuggestions 
-    fd 
-    fzf 
-    nmap 
-    cmatrix 
-    neovim 
-    tmux 
-    eza 
-    ranger 
-    zoxide 
-    gobuster 
-    python3 
-    gobuster 
-    ngrok 
-    ffuf
-    git 
   ];
 
   home.sessionPath = [ "$HOME/go/bin" ];
