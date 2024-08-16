@@ -25,10 +25,9 @@
 
   hardware = {
     #opengl
-    opengl.enable = true;
+    graphics.enable = true;
 
     pulseaudio.enable = false;
-
   };
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -65,7 +64,7 @@
     cmake
     cmatrix
     python3
-    gnome.gnome-keyring
+    gnome-keyring
     hyprpaper
     vscode
     kitty
@@ -101,7 +100,6 @@
   };
   
   # Enable sound with pipewire.
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
