@@ -45,7 +45,6 @@ with lib; {
       extraGroups = [
         "wheel"
       ];
-      shell = pkgs.fish;
       hashedPassword = "$6$NjIbvQqK1EIbSjs4$x9BYXM8xsfxQKg/Ct.SM6MiYb0t1bvWxwWv33s/th8KQkrSKegb0J/aYFXDq1B7p7b2rsmgJKS559bZ3vx4TS1";
       openssh.authorizedKeys.keys = [sshPubKey];
     };
