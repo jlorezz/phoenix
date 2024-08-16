@@ -3,6 +3,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins/cmp.nix
     ./plugins/treesitter.nix
+    ./plugins/tele.nix
     ./plugins/ui.nix
 
     ./colorscheme.nix
