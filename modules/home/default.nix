@@ -30,7 +30,6 @@
             pkgs.wget 
             pkgs.zip 
             pkgs.unzip 
-            inputs.nvim.packages.x86_64-linux.default
           ];
         };
 

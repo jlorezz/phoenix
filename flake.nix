@@ -12,10 +12,10 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     
-    nvim.url = "github:jlorezz/jlorezz-vim";
-    nvim.inputs.parts.follows = "flake-parts";
-
     sops-nix.url = "github:Mic92/sops-nix";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
