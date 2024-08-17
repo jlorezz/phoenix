@@ -4,6 +4,7 @@
     ./plugins/cmp.nix
     ./plugins/harpoon.nix
     ./plugins/treesitter.nix
+    ./plugins/lazy.nix
     ./plugins/tele.nix
     ./plugins/ui.nix
 
