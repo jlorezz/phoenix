@@ -6,6 +6,7 @@
     ./plugins/floaterm.nix
     ./plugins/harpoon.nix
     ./plugins/lazy.nix
+    ./plugins/lsp.nix
     ./plugins/neo-tree.nix
     ./plugins/tele.nix
     ./plugins/treesitter.nix
