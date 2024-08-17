@@ -2,10 +2,13 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins/cmp.nix
+    ./plugins/comment.nix
+    ./plugins/floaterm.nix
     ./plugins/harpoon.nix
-    ./plugins/treesitter.nix
     ./plugins/lazy.nix
+    ./plugins/neo-tree.nix
     ./plugins/tele.nix
+    ./plugins/treesitter.nix
     ./plugins/ui.nix
 
     ./colorscheme.nix
