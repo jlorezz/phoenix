@@ -17,6 +17,9 @@
       # system
       ../../modules/home/system/hyprland
       ../../modules/home/system/waybar
+      ../../modules/home/system/dunst
+      ../../modules/home/system/wofi
+      ../../modules/home/system/wlogout
 
       # programs
       ../../modules/home/programs/wezterm
@@ -44,9 +47,9 @@
 
     #  Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
@@ -104,7 +107,7 @@
       };
     };
   };
-  
+
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {
@@ -114,7 +117,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  
+
   services = {
     gnome.gnome-keyring.enable = true;
   };
@@ -125,12 +128,11 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  
+
   system.stateVersion = "24.05";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 }
-

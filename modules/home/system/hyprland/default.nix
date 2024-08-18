@@ -1,15 +1,14 @@
-{ pkgs, config, inputs, ... }: 
+{ pkgs, config, inputs, ... }:
 
 {
   # Import additional configurations if needed
-  imports = [ 
-  #  ./hyprlocktty.nix 
-  #  ./hypridle.nix 
-  #  ./hyprpaper.nix 
-  #  ./hyprcursor.nix 
+  imports = [
+    ./hyprlocktty.nix
+    ./hypridle.nix
+    ./hyprpaper.nix
   ];
-    
-  
+
+
   # Define packages for the home environment
   home.packages = with pkgs; [
     hyprshot
@@ -45,6 +44,8 @@
 
       exec-once = [
         "startup"
+        "${pkgs.hypridle}/bin/hypridle"
+        "${pkgs.hyprpaper}/bin/hyprpaper"
       ];
 
       # Environment variables
@@ -68,7 +69,7 @@
         "DP-2,2560x1440@164.84,2560x0,1"
         "HDMI-A-2,2560x1440@143.86,5120x0,1"
       ];
-      
+
       ###################
       ### LOOK AND FEEL ###
       ###################
@@ -157,15 +158,21 @@
 
       bind = [
         # Launch applications
-        "$mainMod, Q, exec, ${pkgs.wezterm}/bin/wezterm" # Launch terminal
-        "$mainMod, E, exec, $fileManager" # Launch file manager
-        "$mainMod, R, exec, $menu" # Launch menu
-        "$mainMod, C, killactive," # Close active window
-        "$mainMod, M, exit," # Exit Hyprland
-        "$mainMod, V, togglefloating," # Toggle floating mode
-        "$mainMod, F, fullscreen" # Toggle fullscreen mode
-        "$mainMod, P, pseudo," # Toggle pseudotile mode
-        "$mainMod, J, togglesplit," # Toggle split mode
+        "$mainMod, RETURN, exec, ${pkgs.wezterm}/bin/wezterm" # Launch terminal
+        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
+        "$mod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
+        "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
+        "$mod, X, exec, powermenu" # Powermenu
+        "$mod, SPACE, exec, menu" # Launcher
+
+        "$mod, Q, killactive," # Close window
+        "$mod, T, togglefloating," # Toggle Floating
+        "$mod, F, fullscreen" # Toggle Fullscreen
+        "$mod, left, movefocus, l" # Move focus left
+        "$mod, right, movefocus, r" # Move focus Right
+        "$mod, up, movefocus, u" # Move focus Up
+        "$mod, down, movefocus, d" # Move focus Down
 
         # Window focus movement
         "$mainMod, left, movefocus, l"
@@ -207,6 +214,10 @@
 
         # Additional keybinds
         "$mainMod, S, exec, rofi -show drun -showicons"
+
+        "$mod, F2, exec, night-shift-off" # Turn off night shift
+        "$mod, F3, exec, night-shift-on" # Turn on night shift
+
       ];
 
       # Mouse bindings

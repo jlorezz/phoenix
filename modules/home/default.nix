@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [inputs.home-manager.nixosModules.default];
-  
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -26,11 +26,15 @@
           homeDirectory = "/home/${username}";
           stateVersion = "24.05";
           packages = [
-            pkgs.curl 
-            pkgs.wget 
-            pkgs.zip 
-            pkgs.unzip 
+            pkgs.curl
+            pkgs.wget
+            pkgs.zip
+            pkgs.unzip
           ];
+          file."wallpapers" = {
+            recursive = true;
+            source = ./wallpapers;
+          };
         };
 
         programs.home-manager.enable = true;
