@@ -26,16 +26,10 @@
     "/mnt/data-hdd" = {
       device = "/dev/disk/by-uuid/9c64f3be-dff5-4fbe-a9fa-3924189bd321";
       fsType = "ext4";
-      options = [
-        "uid=${config.users.users.${username}.uid}"
-      ];
     };
     "/mnt/data-ssd" = {
       device = "/dev/disk/by-uuid/291d3710-07e9-41dd-92a4-8848d61c956f";
       fsType = "ext4";
-      options = [
-        "uid=${config.users.users.${username}.uid}"
-      ];
     };
   };
 
