@@ -49,6 +49,7 @@
     discord
     emacs
     firefox-wayland
+    greetd.tuigreet
     fzf
     git
     gcc
@@ -90,7 +91,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
         user = "greeter";
       };
     };
@@ -121,6 +122,17 @@
   services.openssh.enable = true;
 
   system.stateVersion = "24.05";
+
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal"; # Without this errors will spam on screen
+    # Without these bootlogs will spam on screen
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 }
