@@ -4,7 +4,7 @@
     mouse = true;
     shell = "${pkgs.zsh}/bin/zsh";
     prefix = "C-s";
-    terminal = "kitty";
+    terminal = "wezterm";
     keyMode = "vi";
 
     extraConfig = ''
