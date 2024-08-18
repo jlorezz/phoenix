@@ -159,20 +159,20 @@
       bind = [
         # Launch applications
         "$mainMod, RETURN, exec, ${pkgs.wezterm}/bin/wezterm" # Launch terminal
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
-        "$mod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
-        "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-        "$mod, X, exec, powermenu" # Powermenu
-        "$mod, SPACE, exec, menu" # Launcher
+        "$mainMod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+        "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
+        "$mainMod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
+        "$mainMod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
+        "$mainMod, X, exec, powermenu" # Powermenu
+        "$mainMod, SPACE, exec, menu" # Launcher
 
-        "$mod, Q, killactive," # Close window
-        "$mod, T, togglefloating," # Toggle Floating
-        "$mod, F, fullscreen" # Toggle Fullscreen
-        "$mod, left, movefocus, l" # Move focus left
-        "$mod, right, movefocus, r" # Move focus Right
-        "$mod, up, movefocus, u" # Move focus Up
-        "$mod, down, movefocus, d" # Move focus Down
+        "$mainMod, Q, killactive," # Close window
+        "$mainMod, T, togglefloating," # Toggle Floating
+        "$mainMod, F, fullscreen" # Toggle Fullscreen
+        "$mainMod, left, movefocus, l" # Move focus left
+        "$mainMod, right, movefocus, r" # Move focus Right
+        "$mainMod, up, movefocus, u" # Move focus Up
+        "$mainMod, down, movefocus, d" # Move focus Down
 
         # Window focus movement
         "$mainMod, left, movefocus, l"
@@ -215,8 +215,8 @@
         # Additional keybinds
         "$mainMod, S, exec, rofi -show drun -showicons"
 
-        "$mod, F2, exec, night-shift-off" # Turn off night shift
-        "$mod, F3, exec, night-shift-on" # Turn on night shift
+        "$mainMod, F2, exec, night-shift-off" # Turn off night shift
+        "$mainMod, F3, exec, night-shift-on" # Turn on night shift
 
       ];
 
