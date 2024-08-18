@@ -11,14 +11,13 @@
     devshell.url = "github:numtide/devshell";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = {
