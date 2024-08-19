@@ -88,6 +88,8 @@
     font-awesome
   ];
 
+  programs.gamemode.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
