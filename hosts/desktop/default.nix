@@ -26,6 +26,7 @@
       ../../modules/home/programs/nvim
       ../../modules/home/programs/shell
       ../../modules/home/programs/dir-env
+      ../../modules/home/programs/kitty
 
       # scripts
       ../../modules/home/scripts

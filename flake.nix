@@ -21,7 +21,6 @@
   };
 
   outputs = {
-    self,
     flake-parts,
     ...
   } @ inputs: let
