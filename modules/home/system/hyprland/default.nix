@@ -158,7 +158,7 @@
 
       bind = [
         # Launch applications
-        "$mainMod, C, exec, ${pkgs.wezterm}/bin/wezterm" # Launch terminal
+        "$mainMod, C, exec, ${pkgs.kitty}/bin/kitty" # Launch terminal
         "$mainMod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
         "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
         "$mainMod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
