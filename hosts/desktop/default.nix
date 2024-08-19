@@ -71,6 +71,8 @@
     ranger
     rofi-wayland
     sddm
+    spotify
+    teams-for-linux
     waybar
     wezterm
     mangohud
