@@ -47,7 +47,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    discord
+    vesktop
     emacs
     firefox-wayland
     greetd.tuigreet
@@ -55,7 +55,7 @@
     git
     gcc
     cmake
-    bottles
+    lutris
     cmatrix
     python3
     gnome.gnome-keyring
