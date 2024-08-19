@@ -63,6 +63,7 @@
     kitty
     gnumake
     lutris
+    obs-studio
     neofetch
     nodejs
     networkmanagerapplet
