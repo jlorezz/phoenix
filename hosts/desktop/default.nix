@@ -55,7 +55,6 @@
     git
     gcc
     cmake
-    lutris
     cmatrix
     python3
     gnome.gnome-keyring
@@ -63,7 +62,6 @@
     vscode
     kitty
     gnumake
-    protonup-qt
     obs-studio
     neofetch
     nodejs
@@ -112,6 +110,7 @@
 
   services = {
     gnome.gnome-keyring.enable = true;
+    flatpak.enable = true;
   };
 
   # Enable the X11 windowing system.
