@@ -55,6 +55,7 @@
     git
     gcc
     cmake
+    bottles
     cmatrix
     python3
     gnome.gnome-keyring
@@ -62,13 +63,12 @@
     vscode
     kitty
     gnumake
-    lutris
+    protonup-qt
     obs-studio
     neofetch
     nodejs
     networkmanagerapplet
     pipewire
-    protonup
     ranger
     rofi-wayland
     sddm
@@ -87,10 +87,6 @@
     nerdfonts
     font-awesome
   ];
-
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
 
   services.greetd = {
     enable = true;
