@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, username, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [ ./hardware.nix ../../modules/hardware/nvidia.nix ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -31,15 +31,6 @@
   };
 
   hardware.opengl.enable = true;
-
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   environment.systemPackages = with pkgs; [
     lutris
@@ -101,11 +92,6 @@
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -120,24 +106,16 @@
 
   # Ensure xwayland is available even on wayland session
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-
-  environment.variables = {
-    XDG_SESSION_TYPE = "wayland";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    GAMEMODE_AUTO = "1";
-    NIXOS_OZONE_WL = "1";
-  };
-
   services.openssh.enable = true;
 
-  system.stateVersion = "24.05";
+  # Fix web browser crashes?
+  environment.sessionVariables."NIXOS_OZONE_WL" = "1";
 
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
@@ -148,6 +126,8 @@
     TTYVHangup = true;
     TTYVTDisallocate = true;
   };
+
+  system.stateVersion = "24.05";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 }
