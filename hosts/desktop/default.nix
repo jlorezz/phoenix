@@ -28,12 +28,22 @@
       # scripts
       ../../modules/home/scripts
     ];
+    home.packages = with pkgs; [
+     (lutris.override {
+      extraPkgs = pkgs: [
+        # List package dependencies here
+        #wine
+        #wine-wayland
+        wineWowPackages.stable
+        winetricks
+       ];
+      })
+    ];
   };
 
   hardware.graphics.enable = true;
 
   environment.systemPackages = with pkgs; [
-    lutris
     steam
     vesktop
     emacs
@@ -98,8 +108,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
-  services.flatpak.enable = true;
 
   # Ensure xwayland is available even on wayland session
   services.xserver.enable = true;
