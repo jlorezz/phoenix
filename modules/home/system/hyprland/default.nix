@@ -28,7 +28,6 @@
     wayland-utils
     wayland-protocols
     meson
-    # Add any other packages you may need
   ];
 
   # Hyprland window manager configuration

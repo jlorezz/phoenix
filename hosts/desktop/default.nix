@@ -1,10 +1,7 @@
 { config, lib, pkgs, inputs, username, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware.nix
-    ];
+  imports = [ ./hardware.nix ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -33,10 +30,7 @@
     ];
   };
 
-  hardware = {
-    opengl.enable = true;
-    pulseaudio.enable = false;
-  };
+  hardware.opengl.enable = true;
 
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -48,6 +42,12 @@
   };
 
   environment.systemPackages = with pkgs; [
+    lutris
+    vulkan-loader
+    vulkan-tools
+    wine
+    steam
+    winetricks
     vesktop
     emacs
     firefox-wayland
@@ -78,6 +78,8 @@
     mangohud
     pkg-config
     wget
+    libdecor
+    wl-clipboard
     xdg-utils
   ];
 
@@ -99,7 +101,12 @@
     };
   };
 
-  # Enable sound with pipewire.
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -109,19 +116,25 @@
     jack.enable = true;
   };
 
-  services = {
-    gnome.gnome-keyring.enable = true;
-    flatpak.enable = true;
+  services.flatpak.enable = true;
+
+  # Ensure xwayland is available even on wayland session
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+
+  environment.variables = {
+    XDG_SESSION_TYPE = "wayland";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GAMEMODE_AUTO = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   system.stateVersion = "24.05";
@@ -130,8 +143,7 @@
     Type = "idle";
     StandardInput = "tty";
     StandardOutput = "tty";
-    StandardError = "journal"; # Without this errors will spam on screen
-    # Without these bootlogs will spam on screen
+    StandardError = "journal";
     TTYReset = true;
     TTYVHangup = true;
     TTYVTDisallocate = true;
