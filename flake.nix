@@ -1,22 +1,26 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
-    devshell.url = "github:numtide/devshell";
+    flake-parts.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.41.1&submodules=1";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #  url = "github:nix-community/nixvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
@@ -33,11 +37,5 @@
         ./modules/flake/nixosConfigurations.nix
       ];
       systems = ["x86_64-linux"];
-      perSystem = {pkgs, ...}: {
-        devshells.default.packages = with pkgs; [nil alejandra];
-        devshells.node.packages = with pkgs; [nodejs nodePackages.pnpm];
-        devshells.bun.packages = with pkgs; [bun];
-        devshells.cpp.packages = with pkgs; [clang-tools cmake cppcheck vcpkg gtest];
-      };
     };
 }

@@ -20,7 +20,7 @@
 
       # programs
       ../../modules/home/programs/wezterm
-      ../../modules/home/programs/nvim
+      # ../../modules/home/programs/nvim
       ../../modules/home/programs/shell
       ../../modules/home/programs/dir-env
       ../../modules/home/programs/kitty

@@ -17,7 +17,6 @@
           ++ modules;
       };
   in {
-    wsl = systemConfig [ ../../hosts/wsl.nix ];
     nas = systemConfig [ ../../hosts/nas ];
     desktop = systemConfig [ ../../hosts/desktop ];
   };
