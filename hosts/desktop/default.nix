@@ -34,11 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     lutris
-    vulkan-loader
-    vulkan-tools
-    wine
     steam
-    winetricks
     vesktop
     emacs
     firefox-wayland
@@ -92,6 +88,9 @@
     };
   };
 
+  # Disable pulseaudio which gets enabled by gnome
+  hardware.pulseaudio.enable = lib.mkForce false;
+
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -108,9 +107,6 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.openssh.enable = true;
 
