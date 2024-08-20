@@ -30,7 +30,7 @@
     ];
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   environment.systemPackages = with pkgs; [
     lutris
@@ -45,7 +45,7 @@
     cmake
     cmatrix
     python3
-    gnome.gnome-keyring
+    gnome-keyring
     hyprpaper
     vscode
     kitty
@@ -91,7 +91,6 @@
   # Disable pulseaudio which gets enabled by gnome
   hardware.pulseaudio.enable = lib.mkForce false;
 
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
