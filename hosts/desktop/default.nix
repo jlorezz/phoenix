@@ -47,7 +47,6 @@
     python3
     gnome-keyring
     hyprpaper
-    vscode
     kitty
     gnumake
     obs-studio

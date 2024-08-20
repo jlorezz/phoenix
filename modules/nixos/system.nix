@@ -7,7 +7,6 @@
   ...
 }:
 with lib; {
-  imports = [inputs.vscode-server.nixosModules.default];
 
   environment.variables.EDITOR = mkDefault "nano";
   environment.systemPackages = with pkgs; [alejandra nil];
@@ -26,7 +25,6 @@ with lib; {
 
   services = {
     tailscale.enable = mkDefault true;
-    vscode-server.enable = mkDefault true;
     openssh = mkDefault {
       enable = true;
       settings = {
