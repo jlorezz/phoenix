@@ -28,17 +28,6 @@
       # scripts
       ../../modules/home/scripts
     ];
-    home.packages = with pkgs; [
-     (lutris.override {
-      extraPkgs = pkgs: [
-        # List package dependencies here
-        #wine
-        #wine-wayland
-        wineWowPackages.stable
-        winetricks
-       ];
-      })
-    ];
   };
 
   hardware.graphics.enable = true;
@@ -86,6 +75,8 @@
   ];
 
   programs.gamemode.enable = true;
+
+  services.flatpak.enable = true;
 
   services.greetd = {
     enable = true;
